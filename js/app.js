@@ -100,6 +100,9 @@ var capHillStore = {
   }
 };
 capHillStore.hourlySales();
+var capHillSales = capHillStore.hourlyTotal.reduce((acc, val) =>{
+  return acc + val;
+});
 console.log(capHillStore.hourlyTotal);
 
 var alkiStore = {
@@ -121,4 +124,7 @@ var alkiStore = {
   }
 };
 alkiStore.hourlySales();
+var alkiSales = alkiStore.hourlyTotal.reduce((acc, val) =>{
+  return acc + val;
+});
 console.log(alkiStore.hourlyTotal);
