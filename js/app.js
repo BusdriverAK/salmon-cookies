@@ -33,6 +33,8 @@ var pikeSales = pikeStore.hourlyTotal.reduce((acc, val) => {
 });
 
 //CHANGING THE DOM WITH VALUES CALCULATED
+// PROBABLY TRY MOVING THIS INTO A LOOP THAT EXISTS / a function
+// function
 for(var i = 0; i < storeHours.length; i++){
   var list = document.createElement('li');
   var content = document.createTextNode(storeHours[i] + ' : ' + pikeStore.hourlyTotal[i] + ' cookies');
