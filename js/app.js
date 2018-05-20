@@ -31,6 +31,16 @@ pikeStore.hourlySales();
 var pikeSales = pikeStore.hourlyTotal.reduce((acc, val) => {
   return acc + val;
 });
+
+//CHANGING THE DOM WITH VALUES CALCULATED
+for(var i = 0; i < storeHours.length; i++){
+  var list = document.createElement('li');
+  var content = document.createTextNode(storeHours[i] + ' : ' + pikeStore.hourlyTotal[i] + ' cookies');
+  list.appendChild(content);
+  document.getElementById('pike').appendChild(list);
+}
+
+
 console.log('total', pikeSales);
 
 var seatacStore = {
