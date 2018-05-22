@@ -21,7 +21,7 @@ var pikeStore = {
   hourlySales: function(){
     for(var i = 0; i < storeHours.length; i++){
       var customersPerHour = this.getCustomers();
-      var salesPerHour = Math.floor(customersPerHour * this.avgSales);
+      var salesPerHour = Math.round(customersPerHour * this.avgSales);
       this.hourlyTotal.push(salesPerHour);
     }
   },
@@ -58,12 +58,13 @@ var seatacStore = {
   hourlySales: function(){
     for(var i = 0; i < storeHours.length; i++){
       var customersPerHour = this.getCustomers();
-      var salesPerHour = Math.floor(customersPerHour * this.avgSales);
+      var salesPerHour = Math.round(customersPerHour * this.avgSales);
       this.hourlyTotal.push(salesPerHour);
     }
   }
 };
 seatacStore.hourlySales();
+
 var seatacSales = seatacStore.hourlyTotal.reduce((acc, val) => {
   return acc + val;
 });
@@ -82,12 +83,13 @@ var seattleCenterStore = {
   hourlySales: function(){
     for(var i = 0; i < storeHours.length; i++){
       var customersPerHour = this.getCustomers();
-      var salesPerHour = Math.floor(customersPerHour * this.avgSales);
+      var salesPerHour = Math.round(customersPerHour * this.avgSales);
       this.hourlyTotal.push(salesPerHour);
     }
   }
 };
 seattleCenterStore.hourlySales();
+
 var seattleCenterSales = seattleCenterStore.hourlyTotal.reduce((acc, val) => {
   return acc + val;
 });
@@ -106,12 +108,13 @@ var capHillStore = {
   hourlySales: function(){
     for(var i = 0; i < storeHours.length; i++){
       var customersPerHour = this.getCustomers();
-      var salesPerHour = Math.floor(customersPerHour * this.avgSales);
+      var salesPerHour = Math.round(customersPerHour * this.avgSales);
       this.hourlyTotal.push(salesPerHour);
     }
   }
 };
 capHillStore.hourlySales();
+
 var capHillSales = capHillStore.hourlyTotal.reduce((acc, val) =>{
   return acc + val;
 });
@@ -130,7 +133,7 @@ var alkiStore = {
   hourlySales: function(){
     for(var i = 0; i < storeHours.length; i++){
       var customersPerHour = this.getCustomers();
-      var salesPerHour = Math.floor(customersPerHour * this.avgSales);
+      var salesPerHour = Math.round(customersPerHour * this.avgSales);
       this.hourlyTotal.push(salesPerHour);
     }
   }
