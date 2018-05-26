@@ -11,7 +11,7 @@ function CookieStore(location, minCustomer, maxCustomer, avgSales){
   this.maxCustomer = maxCustomer;
   this.avgSales = avgSales;
   this.hourlyTotal = [];
-  this.dayTotal = dayTotal;
+  //this.dayTotal = dayTotal;
   allStores.push(this);
 }
 
@@ -44,6 +44,9 @@ CookieStore.prototype.renderHours = function(){
     headEl.textContent = storeHours[i];
     tableSale.appendChild(headEl);
   }
+  var headEl = document.createElement('th');
+  headEl.textContent = ('Total');
+  tableSale.appendChild(headEl);
   tableSale.appendChild(rowTotal);
 };
 
