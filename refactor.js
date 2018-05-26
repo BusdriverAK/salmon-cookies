@@ -66,5 +66,24 @@ CookieStore.prototype.renderSales = function(){
   tableSale.appendChild(rowEl);
 };
 
+var pike = new CookieStore('1st and Pike', 23, 65, 6.3);
+var seaTac = new CookieStore('Seatac Airport', 3, 24, 1.2);
+var seaCenter = new CookieStore('Seattle Center', 11, 38, 3.7);
+var capHill = new CookieStore('Capitol Hill', 20, 38, 2.7);
+var alki = new CookieStore('Alki', 2, 16, 4.6);
+
+pike.renderHours();
+
+pike.genSalesByHour();
+seaTac.genSalesByHour();
+seaCenter.genSalesByHour();
+capHill.genSalesByHour();
+alki.genSalesByHour();
+
+pike.renderSales();
+seaTac.renderSales();
+seaCenter.renderSales();
+capHill.renderSales();
+alki.renderSales();
 
 
