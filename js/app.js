@@ -69,6 +69,7 @@ var seatacSales = seatacStore.hourlyTotal.reduce((acc, val) => {
   return acc + val;
 });
 console.log(seatacStore.hourlyTotal);
+console.log(seatacSales);
 
 var seattleCenterStore = {
   minCustomer: 11,
@@ -94,6 +95,7 @@ var seattleCenterSales = seattleCenterStore.hourlyTotal.reduce((acc, val) => {
   return acc + val;
 });
 console.log(seattleCenterStore.hourlyTotal);
+console.log(seattleCenterSales);
 
 var capHillStore = {
   minCustomer: 20,
@@ -119,6 +121,7 @@ var capHillSales = capHillStore.hourlyTotal.reduce((acc, val) =>{
   return acc + val;
 });
 console.log(capHillStore.hourlyTotal);
+console.log(capHillSales);
 
 var alkiStore = {
   minCustomer: 2,
@@ -143,3 +146,4 @@ var alkiSales = alkiStore.hourlyTotal.reduce((acc, val) =>{
   return acc + val;
 });
 console.log(alkiStore.hourlyTotal);
+console.log(alkiSales);
