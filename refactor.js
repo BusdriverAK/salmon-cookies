@@ -20,12 +20,17 @@ CookieStore.prototype.randomFunc = function(){
   return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer) + 1) + this.minCustomer;
 };
 
-// prototype function for Sales numbers by hour
+// prototype function for Sales numbers by hour and
+// reduce function for Day Totals
 CookieStore.prototype.genSalesByHour = function(){
   for(var i = 0; i < storeHours.length; i++){
     var custPerHour = Math.round(this.randomFunc() * this.avgSales);
     this.hourlyTotal.push(custPerHour);
   }
+  // use reduce to add each array position for total
+  this.dayTotal = this.hourlyTotal.reduce((acc, val) => {
+    return acc + val;
+  });
 };
 
 // render Hours to header row of table
@@ -54,6 +59,10 @@ CookieStore.prototype.renderSales = function(){
     dataEl.textContent = this.hourlyTotal[i];
     rowEl.appendChild(dataEl);
   }
+  // add day totals to table and a new row to bottom
+  dataEl = document.createElement('td');
+  dataEl.textContent = this.dayTotal;
+  rowEl.appendChild(dataEl);
   tableSale.appendChild(rowEl);
 };
 
