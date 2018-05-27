@@ -11,7 +11,6 @@ function CookieStore(location, minCustomer, maxCustomer, avgSales){
   this.maxCustomer = maxCustomer;
   this.avgSales = avgSales;
   this.hourlyTotal = [];
-  //this.dayTotal = dayTotal;
   allStores.push(this);
 }
 
@@ -88,3 +87,28 @@ seaTac.renderSales();
 seaCenter.renderSales();
 capHill.renderSales();
 alki.renderSales();
+
+//form event handler
+function formHandler(event){
+  console.log('fdsafdsafds is it working');
+
+  event.preventDefault();
+  var formEle = document.getElementById('addstore');
+  
+  var newLoc = formEle.storeName.value;
+  var newMin = parseInt(formEle.minCust.value);
+  var newMax = parseInt(formEle.maxCust.value);
+  var newAvg = parseFloat(formEle.avgSale.value);
+
+  var makeNewNew = new CookieStore(newLoc, newMin, newMax, newAvg);
+  makeNewNew.genSalesByHour();
+  makeNewNew.renderSales();
+
+
+  console.log(newLoc, newMin, newMax, newAvg);
+}
+
+
+
+var submitEle = document.getElementById('submit');
+submitEle.addEventListener('click', formHandler);
